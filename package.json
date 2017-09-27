@@ -1,0 +1,24 @@
+{
+  "name": "zendesk",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.16.2",
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "cross-env": "^5.0.5",
+    "express": "^4.15.4",
+    "hubspot": "^1.0.2",
+    "nodemon": "^1.12.1",
+    "ts-node": "^3.3.0",
+    "typescript": "^2.5.3"
+  },
+  "scripts": {
+    "serve:local": "cross-env NODE_ENV=local nodemon -L -e js,pug,json --watch server --exec node --inspect ./server/index.js",
+    "serve:local:inspect": "cross-env NODE_ENV=local BABEL_ENV=node babel-node --inspect ./server/index.js",
+    "serve:dev:inspect": "cross-env NODE_ENV=local BABEL_ENV=node node --inspect ./server/index.js",
+    "serve:ts": "cross-env NODE_ENV=dev ts-node ./server/index.ts",
+    "serve:ts:local": "cross-env NODE_ENV=local nodemon -L -e ts,json,pug --watch server --exec \"ts-node --inspect --cache-directory .tscache\" ./server/index.ts"
+  }
+}
